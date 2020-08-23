@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="b8da19e5-2fe4-4a91-98b8-c73415591f73" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="MacroExpansionManager">
+    <option name="directoryName" value="4pj44lzn" />
+  </component>
+  <component name="ProjectId" id="1fJXphBDHfbRBZdJK2Xx9SOOgkw" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+    <option name="showMembers" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="TERMINAL_CUSTOM_COMMANDS_GOT_IT" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../untitled" />
+    <property name="settings.editor.selected.configurable" value="MTConfigurable" />
+  </component>
+  <component name="RunManager" selected="Python.urls">
+    <configuration name="urls" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Django" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/geekyshows/ntdi_dcam/ntdi_dcam" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/geekyshows/ntdi_dcam/ntdi_dcam/urls.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="views" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Django" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/geekyshows/course" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/geekyshows/course/views.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.urls" />
+        <item itemvalue="Python.views" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b8da19e5-2fe4-4a91-98b8-c73415591f73" name="Default Changelist" comment="" />
+      <created>1595937353610</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1595937353610</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="419" y="180" width="598" height="402" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1596001953911">
+      <screen x="73" y="24" width="1293" height="744" />
+    </state>
+    <state x="419" y="180" width="598" height="402" key="#com.intellij.fileTypes.FileTypeChooser/73.24.1293.744@73.24.1293.744" timestamp="1596001953911" />
+    <state x="506" y="141" width="424" height="482" key="FileChooserDialogImpl" timestamp="1597980474029">
+      <screen x="73" y="24" width="1293" height="744" />
+    </state>
+    <state x="506" y="141" width="424" height="482" key="FileChooserDialogImpl/73.24.1293.744@73.24.1293.744" timestamp="1597980474029" />
+    <state width="1247" height="188" key="GridCell.Tab.0.bottom" timestamp="1597912928340">
+      <screen x="73" y="24" width="1293" height="744" />
+    </state>
+    <state width="1247" height="188" key="GridCell.Tab.0.bottom/73.24.1293.744@73.24.1293.744" timestamp="1597912928340" />
+    <state width="1247" height="188" key="GridCell.Tab.0.center" timestamp="1597912928336">
+      <screen x="73" y="24" width="1293" height="744" />
+    </state>
+    <state width="1247" height="188" key="GridCell.Tab.0.center/73.24.1293.744@73.24.1293.744" timestamp="1597912928336" />
+    <state width="1247" height="188" key="GridCell.Tab.0.left" timestamp="1597912928334">
+      <screen x="73" y="24" width="1293" height="744" />
+    </state>
+    <state width="1247" height="188" key="GridCell.Tab.0.left/73.24.1293.744@73.24.1293.744" timestamp="1597912928334" />
+    <state width="1247" height="188" key="GridCell.Tab.0.right" timestamp="1597912928338">
+      <screen x="73" y="24" width="1293" height="744" />
+    </state>
+    <state width="1247" height="188" key="GridCell.Tab.0.right/73.24.1293.744@73.24.1293.744" timestamp="1597912928338" />
+    <state x="212" y="34" key="SettingsEditor" timestamp="1597899906678">
+      <screen x="73" y="24" width="1293" height="744" />
+    </state>
+    <state x="212" y="34" key="SettingsEditor/73.24.1293.744@73.24.1293.744" timestamp="1597899906678" />
+    <state x="792" y="89" key="search.everywhere.popup" timestamp="1595994532614">
+      <screen x="73" y="24" width="1293" height="744" />
+    </state>
+    <state x="792" y="89" key="search.everywhere.popup/73.24.1293.744@73.24.1293.744" timestamp="1595994532614" />
+  </component>
+</project>
