@@ -16,7 +16,6 @@ label.pack()
 
 #root1 = root(font=('calibri',32),text ='wellcome in speakword App',bg='yellow')
 #root1.pack()
-print('hello')
 
 #win32 is a module names
 from win32com.client import Dispatch
