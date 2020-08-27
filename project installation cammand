@@ -1,0 +1,45 @@
+-------------------------------
+Install These in System:
+--------------------------------
+sudo apt install minicom
+sudo apt install virtualenv
+sudo apt install ssh
+sudo apt install python3-pip
+
+
+-------------------------------
+Folder Create:
+--------------------------------
+sudo mkdir /client/
+sudo chown vvdn:vvdn /client/
+
+
+-------------------------------
+Python Install:
+--------------------------------
+cd /client/
+virtualenv -p python3 venv
+
+source venv/bin/activate
+
+pip install pyserial pyyaml easygui pymsgbox python-dateutil
+
+
+-------------------------------
+Socket Files:
+--------------------------------
+
+1. Socket_client.py
+2. socket_server.service
+
+
+socket_server.service move to /etc/systemd/system/
+
+sudo systemctl status socket_server.service
+sudo systemctl enable socket_server.service
+sudo systemctl start socket_server.service
+
+
+sudo systemctl restart socket_server.service
+
+

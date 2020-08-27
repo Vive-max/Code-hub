@@ -1,0 +1,116 @@
+##xampp_server########
+
+1. installation step
+
+sudo apt-update
+sudo apt-upgrade
+
+
+####For PHP 5
+wget https://www.apachefriends.org/xampp-files/5.6.33/xampp-linux-x64-5.6.33-0-installer.run
+chmod +x xampp-linux-x64-5.6.33-0-installer.run
+sudo ./xampp-linux-x64-7.2.2-0-installer.run
+
+
+Step 4 – Start XAMPP
+
+sudo /opt/lampp/xampp start
+
+sudo /opt/lampp/xampp stop
+
+
+####mysql_databases_connectivity cammand###
+
+# pip install mysql-connector
+
+
+###how to install  mysql-workbench
+
+sudo apt update
+
+sudo apt install mysql-workbench
+
+####################MYSQL OPEN IN TERMINAL USING THIS COMMAND################## 
+
+/usr/bin/mysql -u root -p
+
+#################################################################
+ROOT PASSWORD= guru
+
+open Mysql_workbanch ron this cammand:-
+mysql-workbench
+#########################################################
+
+1. Status;
+2. show databases;
+3.Drop database db4;
+4.use db4
+5.create table book(book_id int(5),book_name varchar(20),book_prices float(5.2))
+
+###show the table formate
+6.describe table_name;
+
+## show table data cammand
+7.select * from book;
+
+##how to maltipal insert data 
+8.admin="insert into book (book_id,book_name,book_prices)values(%s,%s,%s)
+  book_details=[(2001,'python3',200),(2002,'c++',300), (2003,'java',3.5), (2004,'django',4.9)]
+  cur.executemany(admin,book_details)
+
+##how to Extracting data from table
+9. admin="select * from book"
+   result= cur.fetchall()
+
+10.
+
+
+
+
+
+#####GitHub ######
+passward   guru@cse123
+
+###Installation git hub command#####
+
+sudo apt-get install git
+
+git config --global user.name "user_name"  (user_name=Vive-max)
+
+git config --global user.email "email_id"  (email_id=vivek.kumar1@vvdntech.in)
+
+git init Mytest
+
+
+
+
+# how to create a new repository
+
+echo "# Code-hub" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git remote add origin https://github.com/Vive-max/Code-hub.git
+git push -u origin maste
+
+###…or push an existing repository from the command line
+git remote add origin https://github.com/Vive-max/Code-hub.git
+git push -u origin master
+
+
+
+
+
+
+
+
+
+
+##########magic command#########
+
+sudo apt-get install xcowsay
+sudo apt install yum xcowsay
+ xcowsay i love econ
+####################
+
+

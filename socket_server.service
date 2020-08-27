@@ -1,0 +1,12 @@
+After=network-online.target
+
+[Service]
+Environment=DISPLAY=:0
+ExecStart=/client/venv/bin/python /client/socket_client.py 54:ee:75:d2:ae:8a 192.168.182.8 8089
+WorkingDirectory=/client
+StandardOutput=file:/client/temp_out.txt
+StandardError=file:/client/temp.txt
+User=vvdn
+
+[Install]
+WantedBy=graphical.target

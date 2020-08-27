@@ -1,0 +1,271 @@
+#OPEN TERMINAL
+#GOTO THE SUDO ADB SHELL
+
+1.CHECK FIRMWARE VERSION
+
+cli_mgr
+version
+exit
+
+**AUTOMETIC TESTING CAMMAND FOR (validate_board --all)
+
+2. SPI FLASH
+
+/etc/vendor/ov491_isp_1FD2_v5.0.bin 
+
+3. MSP PROGRAMMING & FIRMWARE
+
+MSP-BSLFLASH_v31
+
+4. IMU FSYNC
+
+#GOTO THE CLI_MGR
+ imu sync_mode enable
+ exit
+ cat /sys/bus/iio/devices/iio\:device1/raw_data_read
+#GOTO THE CLI_MGR
+ imu enable 3 3
+ imu disable 
+ exit
+
+5. ISP FSYNC 
+
+ gpio-app -n 30 -o 1
+ validate_board --qcs_fsync
+
+6.  PHOTOTRANSISTOR VALUE IN DARK CONDITION
+
+#GOTO THE CLI_MGR
+ msp read phototransistor 
+ msp read phototransistor 
+
+
+6.1  MSP
+
+  msp read int_status_reg 
+7.  INWARD CAM RESET
+
+ gpio-app -n 9 -o 0
+ gpio-app -n 9 -g
+ gpio-app -n 9 -o 1
+ gpio-app -n 9 -g
+
+8. OUT CAM RESET
+ 
+ gpio-app -n 30 -o 1
+ gpio-app -n 30 -o 1
+ gpio-app -n 30 -o 1
+ gpio-app -n 30 -g
+
+9. BT
+ 
+#GOTO THE ADB SHELL
+ btproperty &
+ btapp
+ enable
+ gap_menu
+# TURN ON BT FROMANY DEVICE AND CONNECT TO BOARD'S BT AFTER PAIRING.
+ main_menu
+ opp_menu
+ register
+ accept
+
+10. WIFI STA MODE
+
+ vi /etc/misc/wifi/wpa_supplicant.conf 
+ 
+# REBOOT THE DEVICE AFTER EDITING THE FILE
+  systemctl stop dcam_wifi
+  pkill -9 hostapd
+  ifconfig wlan0 0.0.0.0
+  wifi_sta.sh
+#VERIFY THE CONNECTION USING IFCONFIG AND PING COMMANDS
+
+11. ADB OVER WIFI 
+ 
+  echo "ssid=DCAM-264000xxx" >> /etc/misc/wifi/hostapd-open.conf 
+  systemctl stop dcam_wifi
+  wifi_ap.sh
+
+#CONNECT PC TO DEVICE AP. 
+#TAKE ANOTHER INSTANCE OF TERMINAL BY SHIFT+CTRL+T
+
+  sudo adb tcpip 5555
+
+#DISCONNECT USB CONNECTION
+
+  sudo adb connect 192.168.43.1:5555  
+  sudo adb shell
+
+12. USB HOST MODE
+
+#RUN THE TEST WITH ADB OVER WIFI TERMINAL. 
+ validate_board --usb_host
+
+13. LUMIA POWER DISABLE/ENABLE
+
+#RUN THE TEST WITH ADB OVER WIFI TERMINAL. 
+ lsusb
+ gpio-app -n 26 -o 1
+ lsusb
+ gpio-app -n 26 -o 1
+
+14. SIERRA LTE CONNECTIVITY
+
+#RUN THE TEST WITH ADB OVER WIFI TERMINAL. 
+
+ connectionmgrarm64le /usr/bin/slqssdk 0
+
+#TO CONNECT LTE - OPTION 2
+#TO USE IPV4V6 - OPTION 3
+#PROFILE ID - OPTION 1
+#RUN THE FOLLOWING COMMAND TO TEST THE CONNECTIVITY SPEED.
+
+   ping 8.8.8.8
+
+#UPDATE CURRENT DATE
+
+#CHECK THE RSSI VALUE OF LTE
+ lte_gps_sample_app 'at!gstatus?'
+
+15.
+ SIM CARD DETECTION
+
+ lte_gps_sample_app 'at!iccid?'
+
+16. SIERRA FIRMWARE 
+#RUN THE TEST WITH ADB OVER WIFI TERMINAL.
+
+  lte_gps_sample_app 'at!gobiimpref?'
+
+17. GPS
+
+lte_gps_sample_app 'at!gpsstatus?'
+lte_gps_sample_app 'at!gpssatinfo?'
+lte_gps_sample_app 'at!gpsloc?' 
+
+18. LPM ENTRY
+# RUN THE TEST WITH ADB OVER WIFI TERMINAL.
+ 
+ lpm_entry.sh 
+
+18.1 LPM WAKEUP THROUGH ADB
+#CONNECT THE USB CABLE FOR WAKE THE DEVICE AND ACCESS THE CONSOLE
+#GO TO THE CLI_MGR
+#RUN THE BELOW COMMAND TO CHECK BOOT REASON THE DEVICE.
+
+ msp read qcs_wakeup_resn
+
+18.2 LPM EXIT
+
+ lpm_exit.sh
+
+19.  CAN TESTING
+
+#CAN FLASHING
+#OPEN A TERMINAL FROM BOOTLOADER LOCATION
+
+ adb push bootloader_test /home
+
+#IN ADB TERMINAL
+
+ gpio-app -n 16 -s 1
+ gpio-app -n 16 -s 0
+
+#STTY -F /DEV/TTYHS1 38400 -ICRNL -IXON -OPOST -ONLCR -ISIG -ICANON -IEXTEN -ECHO -ECHOE -ECHOK -ECHOCTL -ECHOKE
+cd /home
+ uart_loopTest
+ chmod 777 bootloader_test
+ md5sum bootloader_test 
+ ./bootloader_test
+
+20
+
+write_kraitinfo_eeprom --version=Rev_D_ECN_V_A1 --main_board=240A1B000033 --out_cam=250A1B000028 --in_cam=221B1B000026 --irled_board=230A1Z000579 --product=264000033 --assembly_date=30-20 --assembly_place=NAPINO --out=Krait.bin
+
+# write_macinfo_eeprom --wifi_mac=cc:c2:61:3f:ff:51 --bt_mac=cc:c2:61:3f:ff:50
+
+cli_mgr
+
+#cli_mgr>imu calibration  
+#cli_mgr> exit
+
+write_hwinfo_eeprom --hw_info1=NA --hw_info2=NA --hw_info3=NA
+#proto
+script_for_fru.sh /data/Krait.bin /data/imu_bias.bin /data/mac_wifi.bin /data/hw_info.bin
+
+
+#script_for_fru.sh /data/Krait.bin /data/imu_bias.bin /data/mac_wifi.bin
+
+reboot
+
+
+* Reboot device
+
+fru_check
+
+read_kraitinfo_emmc
+
+read_imu_cal_emmc
+read_macinfo_emmc 	
+read_hwinfo_emmc
+21. MSP QCS_SHUTDOWN
+
+ msp qcs_shutdown
+
+
+21. DISCONNECT WIFI
+ adb disconnect 192.168.43.1:5555
+
+22. 
+ sudo adb kill-server
+ sudo adb start-server
+
+
+23.
+#usb_dev cheak for connect the usb cable
+validate_board --usb_dev
+
+#usb_host cheak the without usb cable and take a adb over wifi
+
+validate_board --usb_host
+
+
+
+
+
+msp write msp_efuse_gpio 1
+
+1. Run the test with ADB over WiFi terminal. 
+2. After LTE test run the below command for checking the nodes, All 4/5 nodes should be present
+lsusb 
+3. Disable the Lumia power by togglng the GPIO & nodes should be disappear from cli_mgr
+msp write msp_lumia_disable_gpio 1
+4. Again enable the Lumia power and nodes should be appeared
+msp write msp_lumia_disable_gpio 0
+
+
+
+
+
+/ # script_for_fru.sh /data/Krait.bin /data/imu_bias.bin /data/mac_wifi.bin /data/hw_info.bin 
+The bin to be flashed is  /data/Krait.bin
+Validating FRU: Success
+Flashing FRU to I2C EEPROM
+FRU PROGRAMMING SUCCESS
+
+
+#####EFUSE
+
+cli_mgr
+msp write msp_efuse_gpio 1
+
+
+
+
+250A1B000025
+
+221B1B000034
+
+230A1Z000118
+
